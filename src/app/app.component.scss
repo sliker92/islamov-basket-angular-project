@@ -1,0 +1,18 @@
+//colors
+//lightorange #F6B352
+//orange #F68657
+//strongGrey #383A3F
+//black #1F2124
+//lightGrey #E0E3DA
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    aside {
+      height: 75vh;
+      width: 15%;
+      background: #383A3F;
+    }
+
+}

@@ -1,5 +1,13 @@
 <app-logo-image-block></app-logo-image-block>
-<app-menu-dashboard>
-  <p>dsadsad</p>
-</app-menu-dashboard>
-<router-outlet></router-outlet>
+<main>
+  <aside>
+    <app-menu-dashboard></app-menu-dashboard>
+  </aside>
+  <section>
+    <router-outlet></router-outlet>
+  </section>
+  <aside>
+    <app-survey></app-survey>
+    <app-users-rating></app-users-rating>
+  </aside>
+</main>
