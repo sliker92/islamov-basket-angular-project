@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'teams', component: TeamsComponent, pathMatch: 'full'},
   {path: 'rating', component: RatingComponent, pathMatch: 'full'},
   {path: 'about', component: AboutUsComponent, pathMatch: 'full'},
-  {path: '**', component: NotFoundComponent}
+  // {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({

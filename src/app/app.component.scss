@@ -2,10 +2,15 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: #383A3F;
 
   aside {
     height: 75vh;
-    width: 15%;
+    width: 33%;
     background: #383A3F;
+  }
+
+  section {
+    width: 100%;
   }
 }

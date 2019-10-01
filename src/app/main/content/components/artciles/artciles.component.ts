@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-artciles',
@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArtcilesComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  articleDescrShow(wrapper: HTMLDivElement, descr: HTMLDivElement) {
+    wrapper.style.height = `12%`;
+    wrapper.style.transition = '1s';
+    descr.style.display = 'block';
+  }
+
+  articleDescrHide(wrapper: HTMLDivElement, descr: HTMLDivElement) {
+    descr.style.display = 'none';
+    wrapper.style.height = `6%`;
+    wrapper.style.transition = '.5s';
+  }
 }

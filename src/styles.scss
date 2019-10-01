@@ -14,9 +14,17 @@
 }
 
 body {
+  //padding: 0 5% 0 5%;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   line-height: 1.6rem;
+}
+
+main, footer {
+  max-width: 1530px;
+  min-width: 1052px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 a {

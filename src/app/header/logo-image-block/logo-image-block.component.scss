@@ -1,7 +1,11 @@
-.image-block {
-  width: auto;
-  height: 25vh;
-  background-image: url("../images/header-image.jpg");
-  background-position: center 80%;
-  border-bottom: 1px solid black;
+.wrapper {
+  position: relative;
+
+  .image-block {
+
+    height: 25vh;
+    background-image: url("../images/header-image.jpg");
+    background-position: center 80%;
+    border-bottom: 1px solid black;
+  }
 }
