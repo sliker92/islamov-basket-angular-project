@@ -1,21 +1,21 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {AppComponent} from "./app.component";
-import {NewsComponent} from "./main/content/components/news/news.component";
-import {ArtcilesComponent} from "./main/content/components/artciles/artciles.component";
-import {TeamsComponent} from "./main/content/components/teams/teams.component";
-import {RatingComponent} from "./main/content/components/rating/rating.component";
-import {AboutUsComponent} from "./main/content/components/about-us/about-us.component";
-import {NotFoundComponent} from "./not-found.component";
+
+import {HomePageComponent} from "./home-page/home-page.component";
+import {NewsComponent} from "./news-page/news.component";
+import {ArtcilesComponent} from "./artciles-page/artciles.component";
+import {AboutUsComponent} from "./about-page/about-us.component";
+import {RatingComponent} from "./rating-page/rating.component";
+import {TeamsComponent} from "./teams-page/teams.component";
+
 
 const routes: Routes = [
-  // {path: '', component: AppComponent, pathMatch: 'full'},
-  {path: 'news', component: NewsComponent, pathMatch: 'full'},
+  {path: '', component: HomePageComponent, pathMatch: 'full'},
+  {path: 'articles-page', component: NewsComponent, pathMatch: 'full'},
   {path: 'articles', component: ArtcilesComponent, pathMatch: 'full'},
-  {path: 'teams', component: TeamsComponent, pathMatch: 'full'},
-  {path: 'rating', component: RatingComponent, pathMatch: 'full'},
   {path: 'about', component: AboutUsComponent, pathMatch: 'full'},
-  // {path: '**', component: NotFoundComponent}
+  {path: 'rating-page', component: RatingComponent, pathMatch: 'full'},
+  {path: 'teams-page', component: TeamsComponent, pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -23,5 +23,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

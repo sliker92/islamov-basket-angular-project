@@ -17,22 +17,22 @@ export class MenuDashboardService {
         isActive: true
       },
       {
-        link: '/news',
+        link: '/articles-page',
         name: 'Новости',
         isActive: false
       },
       {
-        link: '/articles',
+        link: '/news',
         name: 'Статьи',
         isActive: false
       },
       {
-        link: '/teams',
+        link: '/teams-page',
         name: 'Команды',
         isActive: false
       },
       {
-        link: '/rating',
+        link: '/rating-page',
         name: 'Рейтинг',
         isActive: false
       },
