@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, AfterContentChecked, Output, EventEmitter} from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
+import {PostService} from '../shared/services/post.service';
+import {Observable, pipe} from 'rxjs';
+import {Post} from '../shared/interfaces/post.interface';
+import {map, switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-news',
@@ -7,9 +12,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
 }
+// this.post$.subscribe(console.log).pipe(
+//   map(console.log)
+// );

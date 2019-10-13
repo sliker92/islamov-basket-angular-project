@@ -1,1 +1,35 @@
-<p>article works!</p>
+<!--<article>-->
+<!--  <div *ngFor="let pos of articles">-->
+<!--    <h3>-->
+<!--      {{pos?.title}}-->
+<!--    </h3>-->
+<!--    <p>-->
+<!--      {{pos?.summary}}-->
+<!--    </p>-->
+<!--    <small>{{pos?.tags}}</small>-->
+<!--    <small>{{pos?.publisher}}</small>-->
+<!--    <small>{{pos?.timestamp}}</small>-->
+<!--  </div>-->
+<!--</article>-->
+
+<article class="article">
+  <div *ngFor="let pos of articles">
+    <div class="article-preview">
+      <!--    <a href="/">-->
+      <!--      <img src="https://allbasketball.org/uploads/posts/2019-08/1565272110_jaysontatum.jpg" alt="#"-->
+      <!--           (mouseover)="articleDescrShow(wrapper, descr)" (mouseleave)="articleDescrHide(wrapper, descr)">-->
+      <!--    </a>-->
+    </div>
+    <div class="description-wrapper">
+      <div class="article-header">
+        <h3>{{pos?.title}}</h3>
+      </div>
+      <div class="article-description">
+        <h4>{{pos?.description}}</h4>
+      </div>
+      <div class="article-info">
+        <small>{{pos.timestamp}}</small>
+      </div>
+    </div>
+  </div>
+</article>

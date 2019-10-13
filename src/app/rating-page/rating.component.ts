@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {PostService} from '../shared/services/post.service';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-rating',
@@ -7,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RatingComponent implements OnInit {
 
-  constructor() { }
+  constructor( ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

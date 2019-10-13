@@ -1,28 +1,31 @@
-.left-block {
-  //width: 30%;
-  height: 100%;
-  background-color: #383A3F;
-
-  li {
-    font-size: 2rem;
-    border-bottom: 2px solid black;
-    line-height: 3.5rem;
-  }
-
-  a {
-    padding: 0 1rem;
+  .left-block {
+    min-width: 100px;
+    max-width: 250px;
     width: 100%;
-    color: #FFF;
-    background: #1F2124;
+    height: 75vh;
+    background-color: #383A3F;
 
-    &:hover {
+    li {
+      font-size: 2rem;
+      border-bottom: 2px solid black;
+      line-height: 3.5rem;
+    }
+
+    a {
+      padding: 0 2rem;
+      width: 100%;
+      color: #FFF;
+      background: #1F2124;
+
+      &:hover {
+        color: #F68657;
+        background: #383A3F;
+      }
+    }
+
+    .active {
       color: #F68657;
       background: #383A3F;
     }
   }
 
-  .active {
-    color: #F68657;
-    background: #383A3F;
-  }
-}

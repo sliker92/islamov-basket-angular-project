@@ -1,5 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterContentChecked, Component, Input, OnInit} from '@angular/core';
 import {Post} from '../../interfaces/post.interface';
+import {news} from '../../../fake-back-end/data/news';
+import {PostService} from '../../services/post.service';
 
 @Component({
   selector: 'app-post',
@@ -8,11 +10,18 @@ import {Post} from '../../interfaces/post.interface';
 })
 export class PostComponent implements OnInit {
 
-  @Input() post: Post;
+  post$;
+  post;
 
-  constructor() { }
+  constructor(
+    private postService: PostService
+  ) { }
 
   ngOnInit() {
+    this.post$ = this.postService.getPosts().subscribe(
+      value => {
+        this.post = value;
+      }
+    );
   }
-
 }

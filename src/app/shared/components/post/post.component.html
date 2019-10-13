@@ -1,11 +1,13 @@
 <article>
-  <h3>
-    {{news.title}}
-  </h3>
-  <p>
-    {{news.summary}}
-  </p>
-  <small>{{news.tags}}</small>
-  <small>{{news.publisher}}</small>
-  <small>{{news.timestamp}}</small>
+  <div *ngFor="let pos of post">
+    <h3>
+      {{pos?.title}}
+    </h3>
+    <p>
+      {{pos?.summary}}
+    </p>
+    <small>{{pos?.tags}}</small>
+    <small>{{pos?.publisher}}</small>
+    <small>{{pos?.timestamp}}</small>
+  </div>
 </article>

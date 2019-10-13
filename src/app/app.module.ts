@@ -19,6 +19,9 @@ import {FeaturesDashboardComponent} from './shared/components/features/features-
 import {ArticleComponent} from './shared/components/article/article.component';
 import {PostComponent} from './shared/components/post/post.component';
 import {MainPageComponent} from './main-page/main-page.component';
+import {SharedModule} from './shared/shared.module';
+import {FakeBackendInterceptor} from './fake-back-end/fake-back-end.interceptor';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
 
 @NgModule({
@@ -43,9 +46,16 @@ import {MainPageComponent} from './main-page/main-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: FakeBackendInterceptor,
+      multi: true
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

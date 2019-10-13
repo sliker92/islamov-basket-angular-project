@@ -4,10 +4,10 @@ import { Observable, of } from 'rxjs';
 import { delay, dematerialize, materialize, mergeMap } from 'rxjs/operators';
 
 import endpoints from './endpoints';
-import { checkUrl, idFromUrl } from './helpers';
+import { checkUrl } from './helpers';
 import {
-  getNews,
-  getNewsById
+  getArticles,
+  getPosts,
 } from './routes';
 
 @Injectable()
@@ -26,15 +26,17 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
     function handleRoute() {
       switch (true) {
-        case checkUrl(request, endpoints.messages.messages):
-          const title = request.params.get('folder');
-          return getNews(title);
-        case request.url.match(/\/messages\/\d+$/) && request.method === 'GET':
-          const newsID = idFromUrl(request);
-          return getNewsById(newsID);
+        case checkUrl(request, endpoints.news.article):
+          return getArticles();
+        case checkUrl(request, endpoints.news.post):
+          return getPosts();
+        // case checkUrl(request, endpoints.catalog.branches):
+        //   const id = request.params.get('id');
+        //   return getBranches(id);
         default:
           return next.handle(request);
       }
     }
   }
 }
+
