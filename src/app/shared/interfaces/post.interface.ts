@@ -3,5 +3,6 @@ export interface Post {
   title: string,
   summary: string,
   publisher: string,
-  timestamp: number
+  timestamp: number,
+  image?: string
 }

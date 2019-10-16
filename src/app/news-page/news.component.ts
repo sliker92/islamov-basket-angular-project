@@ -18,6 +18,4 @@ export class NewsComponent implements OnInit {
   ngOnInit() {
   }
 }
-// this.post$.subscribe(console.log).pipe(
-//   map(console.log)
-// );
+

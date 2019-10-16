@@ -13,7 +13,6 @@ import {AboutUsComponent} from './about-page/about-us.component';
 import {SurveyComponent} from './shared/components/features/survey/survey.component';
 import {UsersRatingComponent} from './shared/components/features/users-rating/users-rating.component';
 import {HomePageComponent} from './home-page/home-page.component';
-import {StaticComponent} from './shared/components/static/static.component';
 import {AppRoutingModule} from './app-routing.module';
 import {FeaturesDashboardComponent} from './shared/components/features/features-dashboard/features-dashboard.component';
 import {ArticleComponent} from './shared/components/article/article.component';
@@ -38,7 +37,6 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
     SurveyComponent,
     UsersRatingComponent,
     HomePageComponent,
-    StaticComponent,
     FeaturesDashboardComponent,
     ArticleComponent,
     PostComponent,
