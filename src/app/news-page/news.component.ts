@@ -1,21 +1,32 @@
-import {Component, OnInit, AfterContentChecked, Output, EventEmitter} from '@angular/core';
-import {ActivatedRoute, Params} from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+
 import {PostService} from '../shared/services/post.service';
-import {Observable, pipe} from 'rxjs';
 import {Post} from '../shared/interfaces/post.interface';
-import {map, switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-news',
   templateUrl: './news.component.html',
   styleUrls: ['./news.component.scss']
 })
+
 export class NewsComponent implements OnInit {
 
-  constructor() {
+  posts: Post[];
+  posts$;
+  w;
+
+  constructor(
+    private postService: PostService
+  ) {
   }
 
   ngOnInit() {
+    this.posts$ = this.postService.getPosts().subscribe(
+      value => {
+        this.posts = value;
+        this.w = value[0];
+      }
+    );
   }
 }
 

@@ -1,26 +1,29 @@
-import {Component, OnInit} from '@angular/core';
-import {PostService} from '../../services/post.service';
+import {Component, Input} from '@angular/core';
+import {Article} from '../../interfaces/article.interface';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss']
 })
-export class ArticleComponent implements OnInit {
 
-  article$;
-  articles;
+export class ArticleComponent {
 
-  constructor(
-    private postService: PostService
-  ) { }
+  @Input() post: Article;
 
-  ngOnInit() {
-    this.article$ = this.postService.getArticles().subscribe(
-      value => {
-        this.articles = value;
-      }
-    );
+  constructor() {
+  }
+
+  articleDescrShow(wrapper: HTMLDivElement, descr: HTMLDivElement) {
+    wrapper.style.height = `12%`;
+    wrapper.style.transition = '1s';
+    descr.style.display = 'block';
+  }
+
+  articleDescrHide(wrapper: HTMLDivElement, descr: HTMLDivElement) {
+    descr.style.display = 'none';
+    wrapper.style.height = `6%`;
+    wrapper.style.transition = '.5s';
   }
 }
 

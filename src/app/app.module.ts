@@ -6,7 +6,7 @@ import {LogoImageBlockComponent} from './shared/components/header/logo-image-blo
 import {MenuViewComponent} from './shared/components/menu-dashboard/components/menu-view/menu-view.component';
 import {MenuDashboardComponent} from './shared/components/menu-dashboard/containers/menu-dashboard/menu-dashboard.component';
 import {NewsComponent} from './news-page/news.component';
-import {ArtcilesComponent} from './artciles-page/artciles.component';
+import {ArticlesPageComponent} from './articles-page/articles.component';
 import {TeamsComponent} from './teams-page/teams.component';
 import {RatingComponent} from './rating-page/rating.component';
 import {AboutUsComponent} from './about-page/about-us.component';
@@ -17,7 +17,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {FeaturesDashboardComponent} from './shared/components/features/features-dashboard/features-dashboard.component';
 import {ArticleComponent} from './shared/components/article/article.component';
 import {PostComponent} from './shared/components/post/post.component';
-import {MainPageComponent} from './main-page/main-page.component';
+import {MainLayoutComponent} from './main-layout/main-layout.component';
 import {SharedModule} from './shared/shared.module';
 import {FakeBackendInterceptor} from './fake-back-end/fake-back-end.interceptor';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
@@ -30,7 +30,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
     MenuViewComponent,
     MenuDashboardComponent,
     NewsComponent,
-    ArtcilesComponent,
+    ArticlesPageComponent,
     TeamsComponent,
     RatingComponent,
     AboutUsComponent,
@@ -40,7 +40,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
     FeaturesDashboardComponent,
     ArticleComponent,
     PostComponent,
-    MainPageComponent
+    MainLayoutComponent
   ],
   imports: [
     BrowserModule,

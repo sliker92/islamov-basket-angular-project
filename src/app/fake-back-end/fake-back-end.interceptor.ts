@@ -4,10 +4,10 @@ import { Observable, of } from 'rxjs';
 import { delay, dematerialize, materialize, mergeMap } from 'rxjs/operators';
 
 import endpoints from './endpoints';
-import { checkUrl } from './helpers';
+import {checkUrl, idFromUrl} from './helpers';
 import {
-  getArticles,
-  getPosts,
+  getArticles, getPostByID,
+  getPosts, getTeams,
 } from './routes';
 
 @Injectable()
@@ -30,9 +30,11 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return getArticles();
         case checkUrl(request, endpoints.news.post):
           return getPosts();
-        // case checkUrl(request, endpoints.catalog.branches):
-        //   const id = request.params.get('id');
-        //   return getBranches(id);
+        case checkUrl(request, endpoints.league.team):
+          return getTeams();
+        case request.url.match(/\/news\/\d+$/) && request.method === 'GET':
+          const num = idFromUrl(request);
+          return getPostByID(num);
         default:
           return next.handle(request);
       }

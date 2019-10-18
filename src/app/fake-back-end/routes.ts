@@ -19,11 +19,19 @@ export function getArticles() {
   return ok<Article[]>(article);
 }
 
-// export function getPostById(id: string) {
-//   const branchId = id;
-//   const existingBranch = posts.find(branch => branch.id === branchId);
-//   if (!existingBranch) {
+export function getTeams() {
+  return ok<Team[]>(teams);
+}
+
+// export function getPostById(id: number) {
+//   const newsID = id;
+//   const existingID = news.find(news => news.id === id);
+//   if (!existingID) {
 //     return ok([]);
 //   }
-//   return ok(branches);
+//   return ok(news);
 // }
+
+export function getPostByID(num: number) {
+  return ok(news.find(post => post.id === num));
+}

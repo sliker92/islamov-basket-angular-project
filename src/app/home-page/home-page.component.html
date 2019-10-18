@@ -1,7 +1,14 @@
-<app-logo-image-block></app-logo-image-block>
-<div>
-  <app-menu-dashboard></app-menu-dashboard>
-  <router-outlet></router-outlet>
-  <app-features-dashboard></app-features-dashboard>
-</div>
-
+<section>
+  <div class="container">
+    <app-post
+      *ngFor="let post of posts"
+      [post]="post"
+    >
+    </app-post>
+    <app-article
+      *ngFor="let post of articles"
+      [post]="post"
+    >
+    </app-article>
+  </div>
+</section>

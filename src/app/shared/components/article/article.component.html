@@ -1,21 +1,20 @@
-<article *ngFor="let pos of articles" class="article">
+<article  class="article">
   <div class="article-preview">
-    <a href="/">
-      <img [src]="pos?.image" alt="#">
+    <a [routerLink]="post?.id">
+      <img [src]="post?.image" alt="#">
     </a>
   </div>
   <div class="description-wrapper" #wrapper>
     <div class="article-header">
-      <h4>{{pos?.title}}</h4>
+      <h4>{{post?.title}}</h4>
     </div>
     <div class="article-description" #descr>
       <h5>mini-header</h5>
     </div>
     <div class="article-tags">
-      <small>{{pos?.tags}}</small>
-      <small>{{pos?.publisher}}</small>
-      <small>{{pos?.timestamp}}</small>
+      <small>{{post?.tags}}</small>
+      <small>{{post?.publisher}}</small>
+      <small>{{post?.timestamp}}</small>
     </div>
   </div>
 </article>
-
