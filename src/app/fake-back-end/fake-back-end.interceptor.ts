@@ -33,8 +33,11 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         case checkUrl(request, endpoints.league.team):
           return getTeams();
         case request.url.match(/\/news\/\d+$/) && request.method === 'GET':
-          const num = idFromUrl(request);
-          return getPostByID(num);
+          const numNews = idFromUrl(request);
+          return getPostByID(numNews, 'news');
+        case request.url.match(/\/articles\/\d+$/) && request.method === 'GET':
+          const numArt = idFromUrl(request);
+          return getPostByID(numArt, 'articles');
         default:
           return next.handle(request);
       }

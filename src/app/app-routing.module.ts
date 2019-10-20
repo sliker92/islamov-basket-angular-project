@@ -10,6 +10,7 @@ import {HomePageComponent} from './home-page/home-page.component';
 import {PostComponent} from './shared/components/post/post.component';
 import {ArticleComponent} from './shared/components/article/article.component';
 import {PostInfoComponent} from './shared/components/post-info/post-info.component';
+import {ArticleInfoComponent} from './shared/components/article-info/article-info.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent, pathMatch: 'full'},
@@ -19,7 +20,7 @@ const routes: Routes = [
   },
   {path: 'articles', children: [
     {path: '', component: ArticlesPageComponent},
-    {path: ':id', component: ArticleComponent}]
+    {path: ':id', component: ArticleInfoComponent}]
   },
   {path: 'about', component: AboutUsComponent, pathMatch: 'full'},
   {path: 'rating', component: RatingComponent, pathMatch: 'full'},

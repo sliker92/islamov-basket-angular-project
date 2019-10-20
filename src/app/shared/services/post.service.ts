@@ -20,17 +20,7 @@ export class PostService {
     return this.http.get<Article[]>('/api/articles');
   }
 
-  //
-  // getCartItems(): Observable<Item[]> {
-  //   return this.http.get<Item[]>('/api/cart');
-  // }
-
-
-  getPostsByID(num: number) {
-    console.log(num);
-    return this.http.get<Post[]>(`/api/news/${num}`).pipe(
-      map((response: any) => response.news.filter((post: Post) => post.id === num
-      ))
-    );
+  getPostByID(num: number, post: string) {
+    return this.http.get<Post[]>(`/api/${post}/${num}`);
   }
 }
