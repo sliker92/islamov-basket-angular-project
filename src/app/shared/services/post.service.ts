@@ -6,10 +6,14 @@ import {Observable} from 'rxjs';
 
 import {Post} from '../interfaces/post.interface';
 import {Article} from '../interfaces/article.interface';
+import {Router} from '@angular/router';
 
 @Injectable()
 export class PostService {
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) {
   }
 
   getPosts(): Observable<Post[]> {
@@ -23,4 +27,14 @@ export class PostService {
   getPostByID(num: number, post: string) {
     return this.http.get<Post[]>(`/api/${post}/${num}`);
   }
+
+  // checkUrl(id: string) {
+  //   console.log(this.router.url);
+  //   if (this.router.url == '/') {
+  //     console.log(`/news/${id}`);
+  //     return `/news/${id}`;
+  //   } else {
+  //     return id;
+  //   }
+  // }
 }
