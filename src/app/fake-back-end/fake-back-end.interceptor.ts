@@ -7,7 +7,7 @@ import endpoints from './endpoints';
 import {checkUrl, idFromUrl} from './helpers';
 import {
   getArticles, getPostByID,
-  getPosts, getTeams,
+  getPosts, getTeams, getRating
 } from './routes';
 
 @Injectable()
@@ -32,6 +32,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return getPosts();
         case checkUrl(request, endpoints.league.team):
           return getTeams();
+        case checkUrl(request, endpoints.league.rating):
+          return getRating();
         case request.url.match(/\/news\/\d+$/) && request.method === 'GET':
           const numNews = idFromUrl(request);
           return getPostByID(numNews, 'news');

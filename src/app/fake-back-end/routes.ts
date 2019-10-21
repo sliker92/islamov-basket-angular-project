@@ -10,6 +10,7 @@ import {Article} from '../shared/interfaces/article.interface';
 import {Player} from '../shared/interfaces/player.interface';
 import {Post} from '../shared/interfaces/post.interface';
 import {Team} from '../shared/interfaces/team.interface';
+import {Rating} from '../shared/interfaces/rating.interface';
 
 export function getPosts() {
   return ok<Post[]>(news);
@@ -21,6 +22,10 @@ export function getArticles() {
 
 export function getTeams() {
   return ok<Team[]>(teams);
+}
+
+export function getRating() {
+  return ok<Rating[]>(rating);
 }
 
 // export function getPostById(id: number) {

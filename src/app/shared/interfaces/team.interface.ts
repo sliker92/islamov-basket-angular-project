@@ -4,5 +4,6 @@ export interface Team {
   division: string,
   year: number,
   arena: string,
-  champions: number
+  champions: number,
+  image: string
 }

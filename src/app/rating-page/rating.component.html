@@ -1,3 +1,43 @@
 <section class="rating-section">
-  <p>rating works!</p>
+  <h3>West Teams</h3>
+  <table class="table">
+    <thead class="thead-inverse">
+    <tr>
+      <th>Team</th>
+      <th>Division</th>
+      <th>Wins</th>
+      <th>Loses</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let team of teamsWest">
+      <td><img [src]="team?.image" alt="team logo" class="team-logo"></td>
+      <td><a routerLink="teams/{{ team.name }}">{{ team.name }}</a></td>
+      <td>{{ team.summary.division }}</td>
+      <td>{{ team.summary.wins }}</td>
+      <td>{{ team.summary.loses }}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h3>East Teams</h3>
+  <table class="table">
+    <thead class="thead-inverse">
+    <tr>
+      <th>Team</th>
+      <th>Division</th>
+      <th>Wins</th>
+      <th>Loses</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let team of teamsEast">
+      <td><img [src]="team?.image" alt="team logo" class="team-logo"></td>
+      <td><a routerLink="teams/{{ team.name }}">{{ team.name }}</a></td>
+      <td>{{ team.summary.division }}</td>
+      <td>{{ team.summary.wins }}</td>
+      <td>{{ team.summary.loses }}</td>
+    </tr>
+    </tbody>
+  </table>
 </section>
