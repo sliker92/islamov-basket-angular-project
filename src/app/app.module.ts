@@ -18,10 +18,14 @@ import {FeaturesDashboardComponent} from './shared/components/features/features-
 import {ArticleComponent} from './shared/components/article/article.component';
 import {PostComponent} from './shared/components/post/post.component';
 import {MainLayoutComponent} from './main-layout/main-layout.component';
-import {SharedModule} from './shared/shared.module';
 import {FakeBackendInterceptor} from './fake-back-end/fake-back-end.interceptor';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
-
+import {LoginModule} from './login.module';
+import {PostService} from './shared/services/post.service';
+import {HttpClientModule} from '@angular/common/http';
+import {PostInfoComponent} from './shared/components/post-info/post-info.component';
+import {ArticleInfoComponent} from './shared/components/article-info/article-info.component';
+import {HeaderComponent} from './shared/components/header/container/header/header.component';
 
 @NgModule({
   declarations: [
@@ -40,12 +44,16 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
     FeaturesDashboardComponent,
     ArticleComponent,
     PostComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    PostInfoComponent,
+    ArticleInfoComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule
+    LoginModule,
+    HttpClientModule,
   ],
   providers: [
     {
@@ -53,6 +61,10 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
       useClass: FakeBackendInterceptor,
       multi: true
     },
+    PostService
+  ],
+  exports: [
+    HttpClientModule
   ],
   bootstrap: [AppComponent]
 })

@@ -7,8 +7,6 @@ import {AboutUsComponent} from './about-page/about-us.component';
 import {RatingComponent} from './rating-page/rating.component';
 import {TeamsComponent} from './teams-page/teams.component';
 import {HomePageComponent} from './home-page/home-page.component';
-import {PostComponent} from './shared/components/post/post.component';
-import {ArticleComponent} from './shared/components/article/article.component';
 import {PostInfoComponent} from './shared/components/post-info/post-info.component';
 import {ArticleInfoComponent} from './shared/components/article-info/article-info.component';
 
