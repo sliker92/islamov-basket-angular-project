@@ -27,7 +27,7 @@ article {
   }
 
   .description-wrapper {
-    padding-top: 3.5rem;
+    padding-top: 5.5rem;
     width: 99%;
     background-color: rgba(0,0,0,0.7);
     position: absolute;
@@ -46,9 +46,9 @@ article {
   .tags {
     position: absolute;
     color: lightgrey;
-    font-size: .8rem;
-    padding: 1rem;
+    font-size: 0.8rem;
+    z-index: 100;
+    top: 1%;
     left: .5%;
-    bottom: 350%;
   }
 }

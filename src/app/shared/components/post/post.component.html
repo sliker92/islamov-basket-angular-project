@@ -1,4 +1,8 @@
 <article class="post short-story">
+  <div class="tags">
+    <small>{{post?.publisher + ': '}}</small>
+    <small>{{post?.timestamp * 1000 | date: 'short'}}</small>
+  </div>
   <div class="post-preview">
     <a [routerLink]="post?.id">
       <img [src]="post?.image" [alt]="post?.tags">
@@ -6,10 +10,6 @@
     <div class="description-wrapper">
       <div class="article-header">
         <h4>{{post?.title}}</h4>
-      </div>
-      <div class="tags">
-        <small>{{post?.publisher + ': '}}</small>
-        <small>{{post?.timestamp * 1000 | date: 'short'}}</small>
       </div>
     </div>
   </div>
