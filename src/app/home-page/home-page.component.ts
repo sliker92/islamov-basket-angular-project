@@ -22,7 +22,6 @@ export class HomePageComponent implements OnInit {
     const post$ = this.postService.getPosts().subscribe(
       value => {
         this.posts = value;
-
       }
     );
 
