@@ -1,1 +1,12 @@
-<app-main-layout></app-main-layout>
+<app-header></app-header>
+<div class="grid-container">
+  <app-aside-left-view>
+    <app-nav-list></app-nav-list>
+  </app-aside-left-view>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <app-aside-right-view>
+    <app-survey></app-survey>
+  </app-aside-right-view>
+</div>

@@ -1,0 +1,29 @@
+form {
+  background-color: #383A3F;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: flex-end;
+
+  input {
+    height: 2rem;
+    background-color: lightgrey;
+    border-color: #F68657;
+    font-size: 1rem;
+    padding-left: .3rem;
+
+    &:not(last-child) {
+      margin: 0 .5rem;
+    }
+  }
+
+  .btn {
+    padding: .3rem 1.5rem;
+    background-color: #F6B352;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #F68657;
+    }
+  }
+}

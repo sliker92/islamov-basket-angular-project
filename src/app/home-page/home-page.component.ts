@@ -1,31 +1,29 @@
-import {Component, OnInit} from '@angular/core';
-import {PostService} from '../shared/services/post.service';
-import {Post} from '../shared/interfaces/post.interface';
-import {Article} from '../shared/interfaces/article.interface';
+import { Component, OnInit } from '@angular/core';
+
+import { News } from '../news-page/models/news.interface';
+import { Article } from '../articles-page/models/article.interface';
+import { PostsService } from '../shared/services/posts.service';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
-
 export class HomePageComponent implements OnInit {
 
-  posts: Post[];
+  posts: News[];
   articles: Article[];
 
-  constructor(
-    private postService: PostService
-  ) { }
+  constructor(private postsService: PostsService) { }
 
   ngOnInit() {
-    const post$ = this.postService.getPosts().subscribe(
+    const post$ = this.postsService.getPosts().subscribe(
       value => {
         this.posts = value;
       }
     );
 
-    const article$ = this.postService.getArticles().subscribe(
+    const article$ = this.postsService.getArticles().subscribe(
       value => {
         this.articles = value;
       }

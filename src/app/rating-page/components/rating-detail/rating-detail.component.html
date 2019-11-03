@@ -1,0 +1,9 @@
+<tbody>
+<tr *ngFor="let team of teams">
+  <td><img [src]="team?.image" alt="team logo" class="team-logo"></td>
+  <td><span>{{ team.name }}</span></td>
+  <td>{{ team.summary.division }}</td>
+  <td>{{ team.summary.wins }}</td>
+  <td>{{ team.summary.loses }}</td>
+</tr>
+</tbody>

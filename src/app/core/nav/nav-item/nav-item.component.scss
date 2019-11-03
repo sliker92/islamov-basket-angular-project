@@ -1,0 +1,23 @@
+li {
+  font-size: 2rem;
+  border-bottom: 2px solid black;
+  line-height: 3.5rem;
+
+  a {
+    padding: 0 2rem;
+    width: 100%;
+    color: #FFF;
+    background: #1F2124;
+
+    &:hover {
+      color: #F68657;
+      background: #383A3F;
+    }
+  }
+
+  .active {
+    color: #F68657;
+    background: #383A3F;
+  }
+}
+

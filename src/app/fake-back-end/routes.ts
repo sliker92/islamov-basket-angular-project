@@ -1,19 +1,18 @@
-import {error, ok, sendJSON} from './helpers';
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import { error, ok, sendJSON } from './helpers';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 
-import {article} from './data/articles';
-import {news} from './data/news';
-import {rating} from './data/rating';
-import {teams} from './data/teams';
+import { article } from './data/articles';
+import { news } from './data/news';
+import { rating } from './data/rating';
+import { teams } from './data/teams';
 
-import {Article} from '../shared/interfaces/article.interface';
-import {Player} from '../shared/interfaces/player.interface';
-import {Post} from '../shared/interfaces/post.interface';
-import {Team} from '../shared/interfaces/team.interface';
-import {Rating} from '../shared/interfaces/rating.interface';
+import { Article } from '../articles-page/models/article.interface';
+import { Rating } from '../rating-page/models/rating.interface';
+import { Team } from '../teams-page/models/team.interface';
+import { News } from '../news-page/models/news.interface';
 
 export function getPosts() {
-  return ok<Post[]>(news);
+  return ok<News[]>(news);
 }
 
 export function getArticles() {
@@ -27,15 +26,6 @@ export function getTeams() {
 export function getRating() {
   return ok<Rating[]>(rating);
 }
-
-// export function getPostById(id: number) {
-//   const newsID = id;
-//   const existingID = news.find(news => news.id === id);
-//   if (!existingID) {
-//     return ok([]);
-//   }
-//   return ok(news);
-// }
 
 export function getPostByID(num: number, post: string) {
   if (post === 'news') {

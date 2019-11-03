@@ -1,16 +1,16 @@
-<main>
+<div class="main-content">
   <div>
-    <app-post
+    <app-news-preview
       *ngFor="let post of posts"
       [post]="post"
     >
-    </app-post>
+    </app-news-preview>
   </div>
   <div>
-    <app-article
+    <app-articles-preview
       *ngFor="let post of articles"
       [post]="post"
     >
-    </app-article>
+    </app-articles-preview>
   </div>
-</main>
+</div>
