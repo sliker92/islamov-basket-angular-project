@@ -1,1 +1,44 @@
-<p>news-edit works!</p>
+<div class="form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <div formGroupName="postEdit" class="form-wrapper">
+      <input
+        type="text"
+        placeholder="Заголовок"
+        formControlName="title"
+        [value]="post?.title">
+      <input
+        type="text"
+        placeholder="Тэги"
+        formControlName="tags"
+        [value]="post?.tags">
+      <input
+        type="text"
+        placeholder="Публикатор"
+        formControlName="publisher"
+        [value]="post?.publisher">
+      <input
+        type="text"
+        placeholder="URL фото"
+        formControlName="image"
+        [value]="post?.image">
+      <textarea
+        rows="10"
+        cols="45"
+        placeholder="Содержимое поста"
+        formControlName="summary"
+        [value]="post?.summary"></textarea>
+    </div>
+
+    <div class="post__button">
+      <button
+        type="submit"
+        [disabled]="form.invalid">
+        Сохранить
+      </button>
+    </div>
+
+    <pre>{{ form.value | json }}</pre>
+
+  </form>
+</div>

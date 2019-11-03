@@ -1,4 +1,4 @@
-<div class="grid-container">
+<div class="grid-container" *ngIf="post$ | async as post; else loading">
   <div class="grid-item">
     <img [src]="post?.image" [alt]="post?.description" class="post-image">
   </div>
@@ -6,4 +6,13 @@
     <h4 class="post-title">{{post?.title}}</h4>
     <p>{{post?.summary}}</p>
   </div>
+  <div>
+    <button type="submit" (click)="toPostEdit()">Редактировать статью</button>
+  </div>
 </div>
+
+
+
+<ng-template #loading>
+  <p class="text-center" style="color: #dc3545; text-align: center">Loading Post...</p>
+</ng-template>

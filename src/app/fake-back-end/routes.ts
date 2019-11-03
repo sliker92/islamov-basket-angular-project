@@ -11,7 +11,7 @@ import { Rating } from '../rating-page/models/rating.interface';
 import { Team } from '../teams-page/models/team.interface';
 import { News } from '../news-page/models/news.interface';
 
-export function getPosts() {
+export function getNews() {
   return ok<News[]>(news);
 }
 

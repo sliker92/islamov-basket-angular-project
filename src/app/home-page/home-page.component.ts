@@ -17,7 +17,7 @@ export class HomePageComponent implements OnInit {
   constructor(private postsService: PostsService) { }
 
   ngOnInit() {
-    const post$ = this.postsService.getPosts().subscribe(
+    const post$ = this.postsService.getNews().subscribe(
       value => {
         this.posts = value;
       }

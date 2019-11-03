@@ -10,6 +10,7 @@ import { NewsEditComponent } from '../components/news-edit/news-edit.component';
 import { NewsListComponent } from '../containers/news-list/news-list.component';
 import { NewsPreviewComponent } from '../components/news-preview/news-preview.component';
 import { CoreModule } from '../../core/core.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CoreModule } from '../../core/core.module';
     CommonModule,
     NewsRoutingModule,
     SharedModule,
+    ReactiveFormsModule,
   ],
   exports: [
     NewsPreviewComponent

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Article } from '../../models/article.interface';
 import { PostsService } from '../../../shared/services/posts.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-articles-detail',
@@ -11,6 +12,7 @@ import { PostsService } from '../../../shared/services/posts.service';
 })
 export class ArticlesDetailComponent implements OnInit {
 
+  post$;
   post;
 
   constructor(
@@ -21,7 +23,7 @@ export class ArticlesDetailComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap
       .pipe(
-        switchMap((params) => this.postsService.getPostByID(+params.get('id'), 'articles'))
+        switchMap((params: Params) => this.post$ = this.postsService.getPostByID(+params.get('id'), 'articles'))
       ).subscribe((data) => {
       this.post = data;
     });

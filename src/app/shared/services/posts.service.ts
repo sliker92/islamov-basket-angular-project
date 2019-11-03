@@ -14,7 +14,7 @@ export class PostsService {
     private router: Router
   ) { }
 
-  getPosts(): Observable<News[]> {
+  getNews(): Observable<News[]> {
     return this.http.get<News[]>('/api/news');
   }
 

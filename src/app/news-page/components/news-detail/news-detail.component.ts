@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { News } from '../../models/news.interface';
 import { PostsService } from '../../../shared/services/posts.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-news-detail',
@@ -11,6 +12,7 @@ import { PostsService } from '../../../shared/services/posts.service';
 })
 export class NewsDetailComponent implements OnInit {
 
+  post$: Observable<News[]>;
   post;
 
   constructor(
@@ -21,9 +23,13 @@ export class NewsDetailComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap
       .pipe(
-        switchMap((params) => this.postsService.getPostByID(+params.get('id'), 'news'))
+        switchMap((params: Params) => this.post$ = this.postsService.getPostByID(+params.get('id'), 'news'))
       ).subscribe((data) => {
       this.post = data;
     });
+  }
+
+  toPostEdit() {
+    this.router.navigate([`/news/${this.post.id}/edit`]);
   }
 }
