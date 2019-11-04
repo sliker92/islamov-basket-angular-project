@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
+  articleBtnClick() {
+    return this.router.navigate(['/articles/create']);
   }
 
+  newsBtnClick() {
+    this.router.navigate(['/news/create']);
+  }
 }

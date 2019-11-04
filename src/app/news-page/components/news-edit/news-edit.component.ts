@@ -5,6 +5,7 @@ import { PostsService } from '../../../shared/services/posts.service';
 import { Observable } from 'rxjs';
 import { News } from '../../models/news.interface';
 import { FormControl, FormGroup } from '@angular/forms';
+import { news } from '../../../fake-back-end/data/news';
 
 @Component({
   selector: 'app-news-edit',
@@ -15,6 +16,7 @@ export class NewsEditComponent implements OnInit {
 
   post$: Observable<News[]>;
   post;
+  label = 'Сохранить';
 
   form = new FormGroup({
     postEdit: new FormGroup({
@@ -42,7 +44,8 @@ export class NewsEditComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Submit:', this.form.value);
+    console.log('Submit:', this.form.value.postEdit);
+    this.postsService.update(this.form.value.postEdit);
   }
 
 }

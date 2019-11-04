@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { PostsService } from './services/posts.service';
 import { RouterModule } from '@angular/router';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
+  ButtonComponent
   ],
   providers: [
     PostsService
@@ -16,6 +18,7 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     RouterModule,
+    ButtonComponent,
   ]
 })
 export class SharedModule { }

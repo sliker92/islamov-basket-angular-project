@@ -31,13 +31,8 @@
     </div>
 
     <div class="post__button">
-      <button
-        type="submit"
-        [disabled]="form.invalid">
-        Сохранить
-      </button>
+      <app-button [label]="label" [disabled]="form.invalid"></app-button>
     </div>
-
     <pre>{{ form.value | json }}</pre>
 
   </form>

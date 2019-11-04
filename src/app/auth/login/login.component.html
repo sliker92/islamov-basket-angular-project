@@ -1,4 +1,6 @@
 <form (submit)="onSubmit()">
+  <ng-content></ng-content>
+  <ng-content></ng-content>
   <div class="form-group">
     <label for="email"></label>
     <input type="email" placeholder="E-mail" name="email" [(ngModel)]="email" class="form-control" required>

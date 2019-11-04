@@ -5,6 +5,7 @@ import { News } from '../../news-page/models/news.interface';
 import { Article } from '../../articles-page/models/article.interface';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class PostsService {
@@ -12,7 +13,8 @@ export class PostsService {
   constructor(
     private http: HttpClient,
     private router: Router
-  ) { }
+  ) {
+  }
 
   getNews(): Observable<News[]> {
     return this.http.get<News[]>('/api/news');
@@ -24,5 +26,13 @@ export class PostsService {
 
   getPostByID(num: number, post: string) {
     return this.http.get<News[]>(`/api/${ post }/${ num }`);
+  }
+
+  add(post) {
+    this.http.post<any>('/api/news', post).subscribe(value => value.unshift(post));
+  }
+
+  update(post) {
+    this.http.patch<any>('/api/news', post).subscribe(value => value.unshift(post));
   }
 }
