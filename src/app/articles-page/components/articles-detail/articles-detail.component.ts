@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
-import { Article } from '../../models/article.interface';
-import { PostsService } from '../../../shared/services/posts.service';
+
 import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
+import { PostsService } from '../../../shared/services/posts.service';
+import { Article } from '../../models/article.interface';
 
 @Component({
   selector: 'app-articles-detail',
@@ -12,7 +14,7 @@ import { Observable } from 'rxjs';
 })
 export class ArticlesDetailComponent implements OnInit {
 
-  post$;
+  post$: Observable<Article[]>;
   post;
 
   constructor(
@@ -27,5 +29,9 @@ export class ArticlesDetailComponent implements OnInit {
       ).subscribe((data) => {
       this.post = data;
     });
+  }
+
+  toPostEdit() {
+    this.router.navigate([`/articles/${this.post.id}/edit`]);
   }
 }

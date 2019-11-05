@@ -1,39 +1,38 @@
 <div class="form">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
 
-    <div formGroupName="postEdit" class="form-wrapper">
+    <div class="form-wrapper">
       <input
         type="text"
         placeholder="Заголовок"
         formControlName="title"
-        [value]="post?.title">
+      >
       <input
         type="text"
         placeholder="Тэги"
         formControlName="tags"
-        [value]="post?.tags">
+      >
       <input
         type="text"
         placeholder="Публикатор"
         formControlName="publisher"
-        [value]="post?.publisher">
+      >
       <input
         type="text"
         placeholder="URL фото"
         formControlName="image"
-        [value]="post?.image">
+      >
       <textarea
         rows="10"
         cols="45"
         placeholder="Содержимое поста"
         formControlName="summary"
-        [value]="post?.summary"></textarea>
+      ></textarea>
     </div>
 
     <div class="post__button">
-      <app-button [label]="label" [disabled]="form.invalid"></app-button>
+      <app-button label="Сохранить" [disabled]="postForm.invalid"></app-button>
     </div>
-    <pre>{{ form.value | json }}</pre>
 
   </form>
 </div>

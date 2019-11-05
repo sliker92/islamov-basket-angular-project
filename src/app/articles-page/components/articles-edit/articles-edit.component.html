@@ -1,1 +1,38 @@
-<p>articles-edit works!</p>
+<div class="form">
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-wrapper">
+      <input
+        type="text"
+        placeholder="Заголовок"
+        formControlName="title"
+      >
+      <input
+        type="text"
+        placeholder="Тэги"
+        formControlName="tags"
+      >
+      <input
+        type="text"
+        placeholder="Публикатор"
+        formControlName="publisher"
+      >
+      <input
+        type="text"
+        placeholder="URL фото"
+        formControlName="image"
+      >
+      <textarea
+        rows="10"
+        cols="45"
+        placeholder="Содержимое поста"
+        formControlName="summary"
+      ></textarea>
+    </div>
+
+    <div class="post__button">
+      <app-button label="Сохранить" [disabled]="postForm.invalid"></app-button>
+    </div>
+
+  </form>
+</div>

@@ -1,15 +1,18 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
-import { News } from '../../models/news.interface';
-import { PostsService } from '../../../shared/services/posts.service';
+
 import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
+import { PostsService } from '../../../shared/services/posts.service';
+import { News } from '../../models/news.interface';
 
 @Component({
   selector: 'app-news-detail',
   templateUrl: './news-detail.component.html',
   styleUrls: ['./news-detail.component.scss']
 })
+
 export class NewsDetailComponent implements OnInit {
 
   post$: Observable<News[]>;

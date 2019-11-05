@@ -5,7 +5,7 @@ import { News } from '../../news-page/models/news.interface';
 import { Article } from '../../articles-page/models/article.interface';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 @Injectable()
 export class PostsService {
@@ -32,7 +32,7 @@ export class PostsService {
     this.http.post<any>('/api/news', post).subscribe(value => value.unshift(post));
   }
 
-  update(post) {
-    this.http.patch<any>('/api/news', post).subscribe(value => value.unshift(post));
+  update(post, path) {
+   return this.http.patch<any>(`/api/${path}`, post);
   }
 }
