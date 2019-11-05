@@ -28,8 +28,8 @@ export class PostsService {
     return this.http.get<News[]>(`/api/${ post }/${ num }`);
   }
 
-  add(post) {
-    this.http.post<any>('/api/news', post).subscribe(value => value.unshift(post));
+  add(post, path) {
+    this.http.post<any>(`/api/${path}`, post).subscribe(value => value.unshift(post));
   }
 
   update(post, path) {

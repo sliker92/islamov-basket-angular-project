@@ -7,7 +7,6 @@ import { switchMap } from 'rxjs/operators';
 
 import { PostsService } from '../../../shared/services/posts.service';
 import { Article } from '../../models/article.interface';
-import { article } from '../../../fake-back-end/data/articles';
 
 @Component({
   selector: 'app-articles-edit',
