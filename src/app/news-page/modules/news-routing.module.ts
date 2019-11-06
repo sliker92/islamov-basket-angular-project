@@ -6,15 +6,16 @@ import { NewsCreateComponent } from '../components/news-create/news-create.compo
 import { NewsEditComponent } from '../components/news-edit/news-edit.component';
 import { NewsDetailComponent } from '../components/news-detail/news-detail.component';
 import { NewsListComponent } from '../containers/news-list/news-list.component';
+import { AuthGuard } from '../../auth/guards/auth.guard';
 
 
 const routes: Routes = [
   {
     path: '', component: NewsPageComponent, children: [
       {path: '', component: NewsListComponent},
-      {path: 'create', component: NewsCreateComponent},
+      {path: 'create', component: NewsCreateComponent, canActivate: [AuthGuard]},
       {path: ':id', component: NewsDetailComponent},
-      {path: ':id/edit', component: NewsEditComponent}
+      {path: ':id/edit', component: NewsEditComponent , canActivate: [AuthGuard]}
     ]
   }
 ];

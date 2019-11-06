@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  template: `<button type="submit" class="btn">{{label}}</button>`,
+  template: `<a class="btn">{{label}}</a>`,
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent {

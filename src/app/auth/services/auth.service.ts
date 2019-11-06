@@ -5,7 +5,9 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class AuthService {
 
-  constructor(private afAuth: AngularFireAuth) { }
+  isLoggedIn: boolean;
+
+  constructor(private afAuth: AngularFireAuth) {}
 
   login(email: string, password: string) {
     return new Promise((resolve, reject) => {

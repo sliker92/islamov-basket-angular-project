@@ -7,7 +7,7 @@
     <p>{{post?.summary}}</p>
   </div>
   <div>
-    <app-button (click)="toPostEdit()" label="Редактировать"></app-button>
+    <app-button *ngIf="authService.isLoggedIn" (click)="toPostEdit()" label="Редактировать"></app-button>
   </div>
 </div>
 

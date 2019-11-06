@@ -31,7 +31,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: './auth/auth.module#AuthModule'
+    loadChildren: './auth/modules/auth.module#AuthModule'
   },
   {path: '**', component: NotFoundPageComponent}
 ];

@@ -6,14 +6,15 @@ import { ArticlesDetailComponent } from '../components/articles-detail/articles-
 import { ArticlesEditComponent } from '../components/articles-edit/articles-edit.component';
 import { ArticlesCreateComponent } from '../components/articles-create/articles-create.component';
 import { ArticlesListComponent } from '../containers/articles-list/articles-list.component';
+import { AuthGuard } from '../../auth/guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '', component: ArticlesPageComponent, children: [
       {path: '', component: ArticlesListComponent},
-      {path: 'create', component: ArticlesCreateComponent},
+      {path: 'create', component: ArticlesCreateComponent, canActivate: [AuthGuard]},
       {path: ':id', component: ArticlesDetailComponent},
-      {path: ':id/edit', component: ArticlesEditComponent}
+      {path: ':id/edit', component: ArticlesEditComponent, canActivate: [AuthGuard]}
     ]
   },
 ];

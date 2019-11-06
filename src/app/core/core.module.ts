@@ -11,7 +11,7 @@ import { SurveyComponent } from './survey/survey.component';
 import { NavService } from './nav/nav.service';
 import { SharedModule } from '../shared/shared.module';
 import { FakeBackendInterceptor } from './fake-back-end.interceptor';
-import { AuthModule } from '../auth/auth.module';
+import { AuthModule } from '../auth/modules/auth.module';
 
 @NgModule({
   declarations: [

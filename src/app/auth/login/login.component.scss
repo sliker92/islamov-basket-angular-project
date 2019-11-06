@@ -17,12 +17,36 @@ form {
     }
   }
 
+  .user-name {
+    padding-top: .1rem;
+    color: white;
+    letter-spacing: .1rem;
+    text-decoration: underline;
+  }
+
   .btn {
     padding: .3rem 1.5rem;
     background-color: #F6B352;
     cursor: pointer;
 
     &:hover {
+      background-color: #F68657;
+    }
+  }
+
+  .btn-reg {
+    padding: .28rem 1.5rem;
+    background-color: #F6B352;
+    cursor: pointer;
+    margin-right: .5rem;
+    margin-left: .5rem;
+    line-height: 1.2rem;
+    border: 2px solid #F68657;
+    color: #1F2124;
+    text-align: center;
+
+    &:hover {
+      color: #1F2124;
       background-color: #F68657;
     }
   }

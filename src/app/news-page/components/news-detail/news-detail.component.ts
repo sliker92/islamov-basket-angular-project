@@ -6,6 +6,7 @@ import { switchMap } from 'rxjs/operators';
 
 import { PostsService } from '../../../shared/services/posts.service';
 import { News } from '../../models/news.interface';
+import { AuthService } from '../../../auth/services/auth.service';
 
 @Component({
   selector: 'app-news-detail',
@@ -21,7 +22,9 @@ export class NewsDetailComponent implements OnInit {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private postsService: PostsService) {}
+    private postsService: PostsService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.route.paramMap

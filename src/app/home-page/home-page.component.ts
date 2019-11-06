@@ -17,13 +17,13 @@ export class HomePageComponent implements OnInit {
   constructor(private postsService: PostsService) { }
 
   ngOnInit() {
-    const post$ = this.postsService.getNews().subscribe(
+   this.postsService.getNews().subscribe(
       value => {
         this.posts = value;
       }
     );
 
-    const article$ = this.postsService.getArticles().subscribe(
+   this.postsService.getArticles().subscribe(
       value => {
         this.articles = value;
       }
