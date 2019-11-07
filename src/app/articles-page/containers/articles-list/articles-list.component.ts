@@ -6,7 +6,7 @@ import { Article } from '../../models/article.interface';
 @Component({
   selector: 'app-articles-list',
   templateUrl: './articles-list.component.html',
-  styleUrls: ['./articles-list.component.scss']
+  styleUrls: [ './articles-list.component.scss' ]
 })
 export class ArticlesListComponent implements OnInit {
 
@@ -15,15 +15,12 @@ export class ArticlesListComponent implements OnInit {
 
   constructor(
     private postsService: PostsService
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.articles$ = this.postsService.getArticles().subscribe(
       value => {
         this.articles = value;
-      }
-    );
+      });
   }
-
 }

@@ -6,6 +6,7 @@ import { RatingDetailComponent } from '../components/rating-detail/rating-detail
 import { RatingRoutingModule } from './rating-routing.module';
 import { RatingListComponent } from '../containers/rating-list/rating-list.component';
 import { RatingService } from '../services/rating.service';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -20,7 +21,8 @@ import { RatingService } from '../services/rating.service';
   ],
   imports: [
     CommonModule,
-    RatingRoutingModule
+    RatingRoutingModule,
+    SharedModule
   ]
 })
 export class RatingModule { }

@@ -20,11 +20,13 @@ import { SharedModule } from '../../shared/shared.module';
     ArticlesCreateComponent,
     ArticlesListComponent
   ],
+  providers: [
+  ],
   imports: [
     CommonModule,
     ArticlesRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     ArticlesPreviewComponent

@@ -1,4 +1,4 @@
-<section class="teams-section" *ngIf="teams">
+<section class="teams-section" *ngIf="teams; else loading">
   <table class="table">
     <thead class="thead-inverse">
     <tr>
@@ -21,3 +21,7 @@
     </tbody>
   </table>
 </section>
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

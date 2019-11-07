@@ -1,4 +1,4 @@
-<section class="rating-section">
+<section class="rating-section" *ngIf="teamsAll; else loading">
   <h3>West Teams</h3>
   <table class="table">
     <thead class="thead-inverse">
@@ -25,3 +25,7 @@
 
   </table>
 </section>
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

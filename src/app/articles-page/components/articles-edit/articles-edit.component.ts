@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 
 import { PostsService } from '../../../shared/services/posts.service';
 import { Article } from '../../models/article.interface';
@@ -16,8 +13,7 @@ import { Article } from '../../models/article.interface';
 
 export class ArticlesEditComponent implements OnInit {
 
-  post$: Observable<Article[]>;
-  post;
+  post: Article;
   postForm: FormGroup;
 
   constructor(
@@ -25,16 +21,13 @@ export class ArticlesEditComponent implements OnInit {
     private route: ActivatedRoute,
     private postsService: PostsService,
     private fb: FormBuilder
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.formBuild();
-    this.route.paramMap
-      .pipe(
-        switchMap((params: Params) => this.post$ = this.postsService.getPostByID(+params.get('id'), 'articles'))
-      ).subscribe((data) => {
-      this.post = data;
+    this.route.data
+      .subscribe(data => {
+      this.post = data.post;
       this.setFormValue();
       this.postForm.patchValue({ tags: this.post.tags });
     });

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PlayersRoutingModule } from './players-routing.module';
 import { PlayersViewComponent } from '../containers/players-view/players-view.component';
 import { TeamsService } from '../services/teams.service';
+import { SharedModule } from '../../shared/shared.module';
 
 
 
@@ -16,7 +17,8 @@ import { TeamsService } from '../services/teams.service';
   ],
   imports: [
     CommonModule,
-    PlayersRoutingModule
+    PlayersRoutingModule,
+    SharedModule
   ]
 })
 export class PlayersModule { }

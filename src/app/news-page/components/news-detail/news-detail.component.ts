@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { debounceTime} from 'rxjs/operators';
 
-import { PostsService } from '../../../shared/services/posts.service';
 import { News } from '../../models/news.interface';
 import { AuthService } from '../../../auth/services/auth.service';
 
@@ -16,22 +14,19 @@ import { AuthService } from '../../../auth/services/auth.service';
 
 export class NewsDetailComponent implements OnInit {
 
-  post$: Observable<News[]>;
-  post;
+  post: News;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private postsService: PostsService,
     private authService: AuthService
   ) {}
 
   ngOnInit() {
-    this.route.paramMap
-      .pipe(
-        switchMap((params: Params) => this.post$ = this.postsService.getPostByID(+params.get('id'), 'news'))
-      ).subscribe((data) => {
-      this.post = data;
+    this.route.data.pipe(
+      debounceTime(500)
+    ).subscribe(data => {
+      this.post = data.post;
     });
   }
 

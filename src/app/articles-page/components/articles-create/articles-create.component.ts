@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { PostsService } from '../../../shared/services/posts.service';
@@ -19,8 +19,7 @@ export class ArticlesCreateComponent implements OnInit {
     private route: ActivatedRoute,
     private postsService: PostsService,
     private fb: FormBuilder
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.formBuild();

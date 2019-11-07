@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-import { Observable } from 'rxjs';
-import { switchMap, timestamp } from 'rxjs/operators';
 
 import { PostsService } from '../../../shared/services/posts.service';
 import { News } from '../../models/news.interface';
@@ -13,10 +10,10 @@ import { News } from '../../models/news.interface';
   templateUrl: './news-edit.component.html',
   styleUrls: [ './news-edit.component.scss' ]
 })
+
 export class NewsEditComponent implements OnInit {
 
-  post$: Observable<News[]>;
-  post;
+  post: News;
   postForm: FormGroup;
 
   constructor(
@@ -24,19 +21,16 @@ export class NewsEditComponent implements OnInit {
     private route: ActivatedRoute,
     private postsService: PostsService,
     private fb: FormBuilder
-  ) {
-  }
+  ) { }
 
   ngOnInit() {
     this.formBuild();
-    this.route.paramMap
-      .pipe(
-        switchMap((params: Params) => this.post$ = this.postsService.getPostByID(+params.get('id'), 'news'))
-      ).subscribe((data) => {
-      this.post = data;
-      this.setFormValue();
-      this.postForm.patchValue({ tags: this.post.tags });
-    });
+    this.route.data
+      .subscribe(data => {
+        this.post = data.post;
+        this.setFormValue();
+        this.postForm.patchValue({ tags: this.post.tags });
+      });
   }
 
   formBuild() {
@@ -71,9 +65,9 @@ export class NewsEditComponent implements OnInit {
                 obj.tags = this.postForm.value.tags;
                 obj.timestamp = Date.now();
               }
-          });
+            });
         }
       );
-    this.router.navigate(['/']);
+    this.router.navigate([ '/' ]);
   }
 }

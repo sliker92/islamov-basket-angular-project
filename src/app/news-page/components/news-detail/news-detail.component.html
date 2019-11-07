@@ -1,4 +1,4 @@
-<div class="grid-container" *ngIf="post$ | async as post; else loading">
+<div class="grid-container" *ngIf="post; else loading">
   <div class="grid-item">
     <img [src]="post?.image" [alt]="post?.description" class="post-image">
   </div>
@@ -12,5 +12,5 @@
 </div>
 
 <ng-template #loading>
-  <p class="text-center" style="color: #dc3545; text-align: center">Loading Post...</p>
+  <app-loader></app-loader>
 </ng-template>
