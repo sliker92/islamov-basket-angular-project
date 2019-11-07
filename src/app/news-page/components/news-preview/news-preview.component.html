@@ -4,7 +4,7 @@
     <small>{{post?.timestamp * 1000 | date: 'short'}}</small>
   </div>
   <div class="post-preview">
-    <a [routerLink]="post?.id">
+    <a [routerLink]="['/news', post?.id]">
       <img [src]="post?.image" [alt]="post?.tags">
     </a>
     <div class="description-wrapper">

@@ -7,7 +7,7 @@ import { PostsService } from '../shared/services/posts.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  styleUrls: [ './home-page.component.scss' ]
 })
 export class HomePageComponent implements OnInit {
 
@@ -17,13 +17,13 @@ export class HomePageComponent implements OnInit {
   constructor(private postsService: PostsService) { }
 
   ngOnInit() {
-   this.postsService.getNews().subscribe(
+    this.postsService.getNews().subscribe(
       value => {
         this.posts = value;
       }
     );
 
-   this.postsService.getArticles().subscribe(
+    this.postsService.getArticles().subscribe(
       value => {
         this.articles = value;
       }
