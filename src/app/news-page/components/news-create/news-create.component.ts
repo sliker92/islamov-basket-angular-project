@@ -38,7 +38,7 @@ export class NewsCreateComponent implements OnInit {
 
   onSubmit() {
     this.postForm.value.id = this.generateID(1, 1000);
-    this.postForm.value.timestamp = Date.now();
+    this.postForm.value.date = new Date();
     this.postsService.add(this.postForm.value, 'news');
     this.router.navigate(['/']);
   }

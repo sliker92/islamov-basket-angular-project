@@ -1,20 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
 import { Observable } from 'rxjs';
 
 import { News } from '../../news-page/models/news.interface';
 import { Article } from '../../articles-page/models/article.interface';
-import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { filter, map } from 'rxjs/operators';
 
 @Injectable()
 export class PostsService {
 
-  constructor(
-    private http: HttpClient,
-    private router: Router
-  ) {
-  }
+  constructor(private http: HttpClient) { }
 
   getNews(): Observable<News[]> {
     return this.http.get<News[]>('/api/news');

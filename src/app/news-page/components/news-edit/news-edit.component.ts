@@ -63,7 +63,7 @@ export class NewsEditComponent implements OnInit {
                 obj.image = this.postForm.value.image;
                 obj.summary = this.postForm.value.summary;
                 obj.tags = this.postForm.value.tags;
-                obj.timestamp = Date.now();
+                obj.date = new Date();
               }
             });
         }

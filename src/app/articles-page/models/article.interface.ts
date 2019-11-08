@@ -1,10 +1,10 @@
 export interface Article {
   id: number,
   title: string,
-  tags: string,
+  tags?: string,
   description?: string,
   summary: string,
   publisher: string,
-  timestamp: number,
-  image?: string
+  date: any,
+  image?: string,
 }

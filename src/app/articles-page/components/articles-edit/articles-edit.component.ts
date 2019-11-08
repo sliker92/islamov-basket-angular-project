@@ -53,7 +53,7 @@ export class ArticlesEditComponent implements OnInit {
 
   onSubmit() {
     this.postForm.value.id = this.post.id;
-    this.postForm.value.timestamp = Date.now();
+    this.postForm.value.date = new Date();
     this.postsService.update(this.postForm.value, 'articles')
       .subscribe(value => {
           value.forEach(
