@@ -4,17 +4,19 @@ form {
   flex-direction: row;
   padding: 1rem;
   justify-content: flex-end;
+  text-align: center;
 
   input {
-    height: 2rem;
     background-color: lightgrey;
     border-color: #F68657;
     font-size: 1rem;
-    padding-left: .3rem;
+    padding: .3rem .3rem;
+    margin: 0 0 0 .3rem;
+    text-align: center;
 
-    &:not(last-child) {
-      margin: 0 .5rem;
-    }
+    //&:not(last-child) {
+    //  margin: 0 .5rem;
+    //}
   }
 
   .user-name {
@@ -38,8 +40,7 @@ form {
     padding: .28rem 1.5rem;
     background-color: #F6B352;
     cursor: pointer;
-    margin-right: .5rem;
-    margin-left: .5rem;
+    margin-left: .2rem;
     line-height: 1.2rem;
     border: 2px solid #F68657;
     color: #1F2124;
@@ -50,4 +51,29 @@ form {
       background-color: #F68657;
     }
   }
+}
+
+@media (max-width: 770px) {
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        background-color: lightgrey;
+        border-color: #F68657;
+        font-size: 1rem;
+        padding-left: .3rem;
+        text-align: center;
+        width: 100%;
+        margin-bottom: .2rem;
+      }
+
+      .btn {
+        margin: 0.3rem;
+      }
+
+      .btn-reg {
+        margin-left: .5rem;
+      }
+    }
 }

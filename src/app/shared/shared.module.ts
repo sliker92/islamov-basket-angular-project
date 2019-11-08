@@ -11,7 +11,7 @@ import { LoaderComponent } from './loader/loader.component';
 @NgModule({
   declarations: [
     ButtonComponent,
-    LoaderComponent
+    LoaderComponent,
   ],
   providers: [
     PostsService,
@@ -25,7 +25,7 @@ import { LoaderComponent } from './loader/loader.component';
   exports: [
     RouterModule,
     ButtonComponent,
-    LoaderComponent
+    LoaderComponent,
   ]
 })
 export class SharedModule { }

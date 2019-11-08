@@ -1,10 +1,14 @@
-.wrapper {
-  position: relative;
-
   .image-block {
     height: 25vh;
-    background-image: url("/assets/images/header/header-image.jpg");
+    background-image: url('/assets/images/header/header-image.jpg');
     background-position: center 80%;
     border-bottom: 1px solid black;
   }
-}
+
+  @media (min-width: 993px) {
+    header {
+        app-nav-list {
+          display: none;
+        }
+    }
+  }
