@@ -3,9 +3,13 @@
   height: 50px;
 }
 
+a {
+  color: white;
+}
+
 .grid-container {
   display: grid;
-  grid-template-columns: .2fr .5fr .5fr 0.2fr .2fr;
+  grid-template-columns: 0.2fr 0.4fr 0.25fr 0.25fr 0.4fr 0.2fr;
 
   .grid-row-item {
     text-align: center;

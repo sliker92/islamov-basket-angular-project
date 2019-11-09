@@ -14,3 +14,10 @@
     background-color: #F68657;
   }
 }
+
+@media (max-width: 993px) {
+  .btn {
+    font-size: .8rem;
+    margin-bottom: .3rem;
+  }
+}

@@ -12,7 +12,7 @@ export class RatingListComponent implements OnInit {
 
   teamsWest: Rating[] = [];
   teamsEast: Rating[] = [];
-  teamsAll;
+  teamsAll: Rating[];
 
   constructor(private ratingService: RatingService) { }
 

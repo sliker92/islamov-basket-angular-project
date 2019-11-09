@@ -19,3 +19,15 @@
     margin-bottom: 1rem;
   }
 }
+
+@media (max-width: 576px) {
+  .grid-container {
+    .grid-item {
+      font-size: .8rem;
+    }
+
+    .post-title {
+      font-size: .9rem;
+    }
+  }
+}

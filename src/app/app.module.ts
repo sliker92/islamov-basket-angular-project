@@ -16,7 +16,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppComponent,
     AboutPageComponent,
     NotFoundPageComponent,
-    HomePageComponent
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,

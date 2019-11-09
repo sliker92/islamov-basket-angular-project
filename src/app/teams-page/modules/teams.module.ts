@@ -5,10 +5,12 @@ import { TeamsRoutingModule } from './teams-routing.module';
 import { TeamsViewComponent } from '../containers/teams-view/teams-view.component';
 import { TeamsService } from '../services/teams.service';
 import { SharedModule } from '../../shared/shared.module';
+import { TeamDetailComponent } from '../components/team-detail/team-detail.component';
 
 @NgModule({
   declarations: [
-    TeamsViewComponent
+    TeamsViewComponent,
+    TeamDetailComponent
   ],
   providers: [
     TeamsService

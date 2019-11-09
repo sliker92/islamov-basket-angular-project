@@ -15,7 +15,7 @@ export class TeamsViewComponent implements OnInit {
   constructor( private teamsService: TeamsService ) { }
 
   ngOnInit() {
-    const teams$ = this.teamsService.getTeams().subscribe(
+    this.teamsService.getTeams().subscribe(
       value => {
         this.teams = value;
       }

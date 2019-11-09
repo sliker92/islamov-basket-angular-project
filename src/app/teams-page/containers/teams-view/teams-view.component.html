@@ -1,25 +1,13 @@
 <section class="teams-section" *ngIf="teams; else loading">
-  <table class="table">
-    <thead class="thead-inverse">
-    <tr>
-      <th>Team</th>
-      <th>Division</th>
-      <th>Foundation year</th>
-      <th>Arena</th>
-      <th>Win championship</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let team of teams">
-      <td><img [src]="team.image" alt="team logo" class="team-logo"></td>
-      <td><a routerLink="teams/{{ team.name }}">{{ team.name }}</a></td>
-      <td>{{ team.division }}</td>
-      <td>{{ team.year }}</td>
-      <td>{{ team.arena }}</td>
-      <td>{{ team.champions }}</td>
-    </tr>
-    </tbody>
-  </table>
+  <h2>Команды NBA</h2>
+  <div class="grid-table-header">
+    <span class="grid-header-item">Команда</span>
+    <span class="grid-header-item">Дивизион</span>
+    <span class="grid-header-item">Год создания</span>
+    <span class="grid-header-item">Арена</span>
+    <span class="grid-header-item">Побед в чемпионате</span>
+  </div>
+  <app-team-detail [teams]="teams"></app-team-detail>
 </section>
 
 <ng-template #loading>

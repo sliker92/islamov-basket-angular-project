@@ -1,29 +1,20 @@
 <section class="rating-section" *ngIf="teamsAll; else loading">
-  <h3>West Teams</h3>
-  <table class="table">
-    <thead class="thead-inverse">
-    <tr>
-      <th>Team</th>
-      <th>Division</th>
-      <th>Wins</th>
-      <th>Loses</th>
-    </tr>
-    </thead>
-    <app-rating-detail [teams]="teamsWest"></app-rating-detail>
-  </table>
-  <h3>East Teams</h3>
-  <table class="table">
-    <thead class="thead-inverse">
-    <tr>
-      <th>Team</th>
-      <th>Division</th>
-      <th>Wins</th>
-      <th>Loses</th>
-    </tr>
-    </thead>
-    <app-rating-detail [teams]="teamsEast"></app-rating-detail>
-
-  </table>
+  <h2>West Teams</h2>
+      <div class="grid-table-header">
+        <span>Team</span>
+        <span>Division</span>
+        <span>Wins</span>
+        <span>Loses</span>
+      </div>
+  <app-rating-detail [teams]="teamsWest"></app-rating-detail>
+  <h2>East Teams</h2>
+      <div class="grid-table-header">
+        <span>Team</span>
+        <span>Division</span>
+        <span>Wins</span>
+        <span>Loses</span>
+      </div>
+  <app-rating-detail [teams]="teamsEast"></app-rating-detail>
 </section>
 
 <ng-template #loading>

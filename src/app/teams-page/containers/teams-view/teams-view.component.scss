@@ -1,8 +1,27 @@
-*{
+* {
   color: #fff;
 }
 
-.team-logo {
-  width: 50px;
-  height: 50px;
+h2 {
+  text-align: center;
+  color: sandybrown!important;
+  margin: 1rem 0;
+}
+
+.grid-table-header {
+  display: grid;
+  grid-template-columns: 0.7fr 0.35fr 0.3fr 0.5fr 0.25fr;
+  text-align: center;
+  border-bottom: 2px solid #383A3F;
+  .grid-header-item{
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 993px) {
+  * {
+    font-size: .8rem;
+  }
 }

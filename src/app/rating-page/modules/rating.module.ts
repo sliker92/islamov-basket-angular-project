@@ -19,6 +19,9 @@ import { SharedModule } from '../../shared/shared.module';
   providers: [
     RatingService
   ],
+  exports: [
+    RatingDetailComponent
+  ],
   imports: [
     CommonModule,
     RatingRoutingModule,
