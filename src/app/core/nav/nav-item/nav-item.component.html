@@ -1,0 +1,9 @@
+<li class="aside-nav-item" *ngFor="let item of nav">
+  <a
+    [routerLink]="item.link"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: item.isActive }"
+  >
+    {{ item.name }}
+  </a>
+</li>

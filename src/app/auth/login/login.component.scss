@@ -1,0 +1,85 @@
+form {
+  background-color: #383A3F;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  justify-content: flex-end;
+  text-align: center;
+
+  input {
+    background-color: lightgrey;
+    border-color: #F68657;
+    font-size: 1rem;
+    padding: .3rem .3rem;
+    margin: 0 0 0 .3rem;
+    text-align: center;
+
+    //&:not(last-child) {
+    //  margin: 0 .5rem;
+    //}
+  }
+
+  .user-name {
+    padding-top: .1rem;
+    color: white;
+    letter-spacing: .1rem;
+    text-decoration: underline;
+  }
+
+  .btn {
+    padding: .3rem 1.5rem;
+    background-color: #F6B352;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #F68657;
+    }
+  }
+
+  .btn-reg {
+    padding: .28rem 1.5rem;
+    background-color: #F6B352;
+    cursor: pointer;
+    margin-left: .2rem;
+    line-height: 1.2rem;
+    border: 2px solid #F68657;
+    color: #1F2124;
+    text-align: center;
+
+    &:hover {
+      color: #1F2124;
+      background-color: #F68657;
+    }
+  }
+}
+
+@media (max-width: 770px) {
+    form {
+      display: flex;
+      flex-direction: column;
+
+      input {
+        background-color: lightgrey;
+        border-color: #F68657;
+        font-size: .8rem;
+        padding-left: .3rem;
+        text-align: center;
+        width: 100%;
+        margin-bottom: .2rem;
+      }
+
+      .btn {
+        margin: 0.2rem 0.3rem;
+        font-size: .8rem;
+      }
+
+      .btn-reg {
+        margin-left: .5rem;
+        font-size: .8rem;
+      }
+
+      .btn-logout {
+        margin: 0.2rem 0.05rem;
+      }
+    }
+}

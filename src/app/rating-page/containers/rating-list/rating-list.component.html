@@ -1,0 +1,22 @@
+<section class="rating-section" *ngIf="teamsAll; else loading">
+  <h2>West Teams</h2>
+      <div class="grid-table-header">
+        <span>Team</span>
+        <span>Division</span>
+        <span>Wins</span>
+        <span>Loses</span>
+      </div>
+  <app-rating-detail [teams]="teamsWest"></app-rating-detail>
+  <h2>East Teams</h2>
+      <div class="grid-table-header">
+        <span>Team</span>
+        <span>Division</span>
+        <span>Wins</span>
+        <span>Loses</span>
+      </div>
+  <app-rating-detail [teams]="teamsEast"></app-rating-detail>
+</section>
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

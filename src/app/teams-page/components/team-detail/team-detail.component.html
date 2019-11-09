@@ -1,0 +1,8 @@
+<div class="grid-container" *ngFor="let team of teams">
+  <span class="grid-row-item"><img [src]="team?.image" alt="team logo" class="team-logo"></span>
+  <span class="grid-row-item"><a routerLink="teams/{{ team.name }}">{{ team.name }}</a></span>
+  <span class="grid-row-item">{{ team.division }}</span>
+  <span class="grid-row-item">{{ team.year }}</span>
+  <span class="grid-row-item">{{ team.arena }}</span>
+  <span class="grid-row-item">{{ team.champions }}</span>
+</div>

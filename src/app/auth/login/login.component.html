@@ -1,0 +1,16 @@
+<form (submit)="onSubmit()">
+  <ng-content *ngIf="authService.isLoggedIn"></ng-content>
+  <ng-content *ngIf="authService.isLoggedIn"></ng-content>
+  <div class="form-group" *ngIf="!authService.isLoggedIn">
+    <label for="email"></label>
+    <input type="email" autocomplete="email" placeholder="E-mail" id="email" name="email" [(ngModel)]="email" class="form-control" required>
+  </div>
+  <div class="form-group" *ngIf="!authService.isLoggedIn">
+    <label for="password"></label>
+    <input type="password" autocomplete="password" placeholder="Password" id="password" name="password" [(ngModel)]="password" class="form-control" required>
+  </div>
+  <span *ngIf="authService.isLoggedIn" class="user-name">{{ email }}</span>
+  <input *ngIf="!authService.isLoggedIn" type="submit" value="Войти" class="btn">
+  <input *ngIf="authService.isLoggedIn" type="submit" value="Выйти" class="btn btn-logout">
+  <a *ngIf="!authService.isLoggedIn" (click)="registerBtnClick()" class="btn-reg">Регистрация</a>
+</form>

@@ -1,0 +1,16 @@
+.form-wrapper {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-gap: .5rem;
+  margin: .5rem;
+
+  input {
+    line-height: 2rem;
+    padding: .2rem;
+  }
+
+  textarea {
+    font-size: 1.5rem;
+    padding: .4rem;
+  }
+}

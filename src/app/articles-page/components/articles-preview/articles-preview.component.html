@@ -1,0 +1,16 @@
+<article  class="article">
+  <div class="tags">
+    <small>{{post?.publisher + ': '}}</small>
+    <small>{{post?.date | date: 'short'}}</small>
+  </div>
+  <div class="article-preview">
+    <a [routerLink]="['/articles', post?.id]">
+      <img [src]="post?.image" [alt]="post?.tags">
+    </a>
+    <div class="description-wrapper">
+      <div class="article-header">
+        <h4>{{post?.title}}</h4>
+      </div>
+    </div>
+  </div>
+</article>

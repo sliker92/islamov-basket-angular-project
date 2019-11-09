@@ -1,0 +1,35 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: .45fr 1fr;
+  grid-gap: 1rem;
+  padding: 1rem;
+  color: white;
+
+    .grid-item {
+      align-self: center;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .post-title {
+      color: bisque;
+      margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+
+    .grid-item {
+      font-size: .8rem;
+    }
+
+    .post-title {
+      font-size: .9rem;
+    }
+  }
+}

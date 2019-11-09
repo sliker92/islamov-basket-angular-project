@@ -1,0 +1,20 @@
+<div class="main-content" *ngIf="posts; else loading">
+  <div>
+    <app-news-preview
+      *ngFor="let post of posts"
+      [post]="post"
+    >
+    </app-news-preview>
+  </div>
+  <div>
+    <app-articles-preview
+      *ngFor="let post of articles"
+      [post]="post"
+    >
+    </app-articles-preview>
+  </div>
+</div>
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

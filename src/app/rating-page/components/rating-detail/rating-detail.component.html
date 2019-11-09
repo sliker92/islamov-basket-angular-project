@@ -1,0 +1,7 @@
+<div class="grid-container" *ngFor="let team of teams">
+  <span class="grid-row-item"><img [src]="team?.image" alt="team logo" class="team-logo"></span>
+  <span class="grid-row-item">{{ team.name }}</span>
+  <span class="grid-row-item">{{ team.summary.division }}</span>
+  <span class="grid-row-item">{{ team.summary.wins }}</span>
+  <span class="grid-row-item">{{ team.summary.loses }}</span>
+</div>

@@ -1,0 +1,42 @@
+li {
+  font-size: 2rem;
+  border-bottom: 2px solid black;
+  line-height: 3.5rem;
+
+  a {
+    text-align: center;
+    padding: 0 2rem;
+    width: 100%;
+    color: #FFF;
+    background: #1F2124;
+
+    &:hover {
+      color: #F68657;
+      background: #383A3F;
+    }
+  }
+
+  .active {
+    color: #F68657;
+    background: #383A3F;
+  }
+}
+
+
+@media (max-width: 992px) {
+  li {
+    font-size: .9rem;
+    line-height: 2rem;
+    a {
+      padding: 0 1rem;
+    }
+  }
+}
+
+
+@media (max-width: 576px) {
+  li {
+    font-size: .9rem;
+    line-height: 1.5rem;
+  }
+}

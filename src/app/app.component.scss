@@ -1,0 +1,16 @@
+.grid-container {
+  max-width: 1423px;
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr 4fr 1fr;
+    main {
+      overflow: hidden;
+    }
+}
+
+@media (max-width: 992px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}
+

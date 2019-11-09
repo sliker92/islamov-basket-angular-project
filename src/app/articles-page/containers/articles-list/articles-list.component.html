@@ -1,0 +1,11 @@
+<div class="grid-container" *ngIf="articles; else loading">
+  <app-articles-preview
+    *ngFor="let post of articles"
+    [post]="post"
+  >
+  </app-articles-preview>
+</div>
+
+<ng-template #loading>
+  <app-loader></app-loader>
+</ng-template>

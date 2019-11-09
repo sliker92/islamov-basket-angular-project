@@ -1,0 +1,22 @@
+* {
+  color: #fff;
+}
+
+h2 {
+  text-align: center;
+  color: sandybrown!important;
+  margin: 1rem 0;
+}
+
+.grid-table-header {
+  display: grid;
+  grid-template-columns: .9fr .7fr .2fr 0.3fr;
+  text-align: center;
+  border-bottom: 2px solid #383A3F;
+}
+
+@media (max-width: 993px) {
+  * {
+    font-size: .8rem;
+  }
+}

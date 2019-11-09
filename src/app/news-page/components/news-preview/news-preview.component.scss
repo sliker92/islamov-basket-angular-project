@@ -1,0 +1,54 @@
+article {
+  position: relative;
+
+  .post-preview {
+    display: block;
+    position: relative;
+    background-color: #383A3F;
+  }
+
+  a {
+    display: block;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-height: 250px;
+    display: block;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    border: 1px solid #F68657;
+    border-top: 7px solid #F68657;
+    overflow: hidden;
+  }
+
+  .description-wrapper {
+    padding-top: 3.3rem;
+    font-size: .9rem;
+    width: 99%;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    left: .5%;
+    bottom: 2%;
+  }
+
+  .article-header {
+    color: #FFFFFF;
+    position: absolute;
+    left: 3%;
+    top: 15%;
+    display: block;
+  }
+
+  .tags {
+    position: absolute;
+    color: lightgrey;
+    font-size: 0.8rem;
+    z-index: 100;
+    top: 1%;
+    left: .5%;
+  }
+}

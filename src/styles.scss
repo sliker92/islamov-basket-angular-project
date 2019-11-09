@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: #383A3F;
+  --dark-color: #1F2124;
+  --light-color: #F6B352;
+  --lighter-color: #F68657;
+  --danger-color: #dc3545;
+  --sucess-color: #28a745;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+main {
+  background-color: #1F2124;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+
+  &:hover {
+    color: var(--lighter-color);
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+//colors
+//lightorange #F6B352
+//orange #F68657
+//strongGrey #383A3F
+//black #1F2124
+//lightGrey #E0E3DA
