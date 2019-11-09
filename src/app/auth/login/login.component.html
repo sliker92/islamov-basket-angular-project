@@ -11,6 +11,6 @@
   </div>
   <span *ngIf="authService.isLoggedIn" class="user-name">{{ email }}</span>
   <input *ngIf="!authService.isLoggedIn" type="submit" value="Войти" class="btn">
-  <input *ngIf="authService.isLoggedIn" type="submit" value="Выйти" class="btn">
+  <input *ngIf="authService.isLoggedIn" type="submit" value="Выйти" class="btn btn-logout">
   <a *ngIf="!authService.isLoggedIn" (click)="registerBtnClick()" class="btn-reg">Регистрация</a>
 </form>

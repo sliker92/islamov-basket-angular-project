@@ -61,7 +61,7 @@ form {
       input {
         background-color: lightgrey;
         border-color: #F68657;
-        font-size: 1rem;
+        font-size: .8rem;
         padding-left: .3rem;
         text-align: center;
         width: 100%;
@@ -70,10 +70,16 @@ form {
 
       .btn {
         margin: 0.2rem 0.3rem;
+        font-size: .8rem;
       }
 
       .btn-reg {
         margin-left: .5rem;
+        font-size: .8rem;
+      }
+
+      .btn-logout {
+        margin: 0.2rem 0.05rem;
       }
     }
 }

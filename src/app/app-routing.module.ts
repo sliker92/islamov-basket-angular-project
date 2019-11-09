@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { PreloadAllModules, Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
@@ -11,27 +11,27 @@ const appRoutes: Routes = [
   {path: 'about', component: AboutPageComponent},
   {
     path: 'articles',
-    loadChildren: './articles-page/modules/articles.module#ArticlesModule'
+    loadChildren: () => import('./articles-page/modules/articles.module').then(m => m.ArticlesModule)
   },
   {
     path: 'news',
-    loadChildren: './news-page/modules/news.module#NewsModule'
+    loadChildren: () => import('./news-page/modules/news.module').then(m => m.NewsModule)
   },
   {
     path: 'rating',
-    loadChildren: './rating-page/modules/rating.module#RatingModule'
+    loadChildren: () => import('./rating-page/modules/rating.module').then(m => m.RatingModule)
   },
   {
     path: 'teams',
-    loadChildren: './teams-page/modules/teams.module#TeamsModule'
+    loadChildren: () => import('./teams-page/modules/teams.module').then(m => m.TeamsModule)
   },
   {
     path: 'teams/players',
-    loadChildren: './teams-page/modules/players.module#PlayersModule'
+    loadChildren: () => import('./teams-page/modules/players.module').then(m => m.PlayersModule)
   },
   {
     path: 'auth',
-    loadChildren: './auth/modules/auth.module#AuthModule'
+    loadChildren: () => import('./auth/modules/auth.module').then(m => m.AuthModule)
   },
   {path: '**', component: NotFoundPageComponent}
 ];

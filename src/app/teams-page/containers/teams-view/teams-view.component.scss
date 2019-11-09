@@ -10,7 +10,7 @@ h2 {
 
 .grid-table-header {
   display: grid;
-  grid-template-columns: 0.7fr 0.35fr 0.3fr 0.5fr 0.25fr;
+  grid-template-columns: 0.7fr 0.4fr 0.3fr 0.5fr 0.25fr;
   text-align: center;
   border-bottom: 2px solid #383A3F;
   .grid-header-item{
@@ -22,6 +22,6 @@ h2 {
 
 @media (max-width: 993px) {
   * {
-    font-size: .8rem;
+    font-size: .7rem;
   }
 }
